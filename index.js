@@ -108,12 +108,16 @@ var averageChanges = (totalChanges / (finances.length - 1));
 
 console.log("Average  Change: $" + averageChanges);
 
-var biggestprofit = [[0, 0]];
+var biggestprofit = [0, 0];
 
-for (var i = 0; i < finances.length; i++){
+console.log(biggestprofit);
+
+console.log(changes[0][1])
+
+for (var i = 0; i < changes.length; i++){
     
-    if (changes[i][1] > biggestprofit[0][1]) {
-        biggestprofit = [changes[i -1][0], changes[i][1]];
+    if (changes[i][1] > biggestprofit[1]) {
+        biggestprofit = [changes[i][0], changes[i][1]];
     }
 }
 
