@@ -104,7 +104,7 @@ for (var i = 1; i < finances.length; i++) {
 
 // Adding up all the monthly changes and then diving by the number of months -1 to find the average of the P&L changes over the period
 var totalChanges = changes.reduce((a, b) => a + b[1], 0);
-var averageChanges = (totalChanges / (finances.length - 1));
+var averageChanges = Math.round((totalChanges / (finances.length - 1)) * 100) / 100;
 
 // Console output for Average Change
 console.log("Average  Change: $" + averageChanges);
@@ -121,7 +121,7 @@ for (var i = 0; i < changes.length; i++) {
 }
 
 // Console output for the Greatest Increase in Profits
-console.log("Greatest Increase in Profits: " + biggestProfit);
+console.log("Greatest Increase in Profits: " + biggestProfit[0] + " ($" + biggestProfit[1] + ")");
 
 // Initializing variable for greatest decrease in profits at 0
 var biggestLoss = [0, 0];
@@ -135,4 +135,4 @@ for (var i = 0; i < changes.length; i++) {
 }
 
 // Console output for the Greatest Decrease in Profits
-console.log("Greatest Decrease in Profits: " + biggestLoss);
+console.log("Greatest Decrease in Profits: " + biggestLoss[0] + " ($" + biggestLoss[1] + ")");
